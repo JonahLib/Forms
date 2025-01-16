@@ -9,7 +9,7 @@ const Typography = ({
   className = "",
 }: TypographyProps): ReactElement => {
   const variantTagMap: Record<
-    TypographyProps["variant"],
+    NonNullable<TypographyProps["variant"]>,
     keyof JSX.IntrinsicElements
   > = {
     header: "h1",
