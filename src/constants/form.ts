@@ -1,22 +1,21 @@
 import * as yup from "yup";
 
 export const FORM_SCHEMA = yup.object().shape({
-  brandName: yup.string().min(2).required(),
-  brandDescription: yup.string().required(),
-  ccgs: yup.string().required(),
-  cats: yup.array().min(1),
+  text: yup.string().min(2).required(),
+  chips: yup.array().min(1),
   tac: yup.boolean(),
+  date: yup.date().required(),
 });
 
 export const TEST_CHIPS = [
-  { value: "1", label: "Health & Wellness" },
-  { value: "2", label: "Outdoor Adventures" },
-  { value: "3", label: "Culinary Delights" },
-  { value: "4", label: "Tech & Gadgets" },
-  { value: "5", label: "Fitness & Training" },
-  { value: "6", label: "Travel & Leisure" },
-  { value: "7", label: "Arts & Culture" },
-  { value: "8", label: "Education & Learning" },
-  { value: "9", label: "Fashion & Style" },
-  { value: "10", label: "Entertainment & Media" },
+  { value: "1", label: "Chip 1" },
+  { value: "2", label: "Chip 2" },
+  { value: "3", label: "Chip 3" },
+  { value: "4", label: "Chip 4" },
+  { value: "5", label: "Chip 5" },
+  { value: "6", label: "Chip 6" },
+  { value: "7", label: "Chip 7" },
+  { value: "8", label: "Chip 8" },
+  { value: "9", label: "Chip 9" },
+  { value: "10", label: "Chip 10" },
 ];
