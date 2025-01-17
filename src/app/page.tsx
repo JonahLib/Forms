@@ -6,6 +6,7 @@ import DropdownInput from "@/components/dropdown_input";
 import Form from "@/components/form";
 import FormProvider from "@/components/form_provider";
 import FormResults from "@/components/form_results";
+import ImageUpload from "@/components/image_upload";
 import RadioInput from "@/components/radio_input/indes";
 import TextInput from "@/components/text_input";
 import { FORM_SCHEMA, TEST_CHIPS } from "@/constants/form";
@@ -23,6 +24,7 @@ export default function Home() {
         dropdown: "",
         date: "",
         radio: "",
+        image: "",
       }}
       yupSchema={FORM_SCHEMA}
     >
@@ -47,6 +49,7 @@ export default function Home() {
           ]}
           className="mb-4"
         />
+        <ImageUpload name="image" />
         <DropdownInput
           name="dropdown"
           label="Dropdown Input"
