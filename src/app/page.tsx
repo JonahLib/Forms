@@ -37,7 +37,7 @@ export default function Home() {
           name="text"
           type="text"
           label="Text Input"
-          placeholder="Place holder"
+          placeholder="Placeholder"
         />
         <RadioInput
           name="radio"
@@ -59,18 +59,18 @@ export default function Home() {
             { name: "Option 3", value: "3" },
           ]}
         />
+        <TextInput
+          name="date"
+          type="date"
+          label="Date Input"
+          placeholder="Placeholder"
+        />
         <ChipsInput
           title="Chips Input"
           description="please select up to 3"
           name="chips"
           options={TEST_CHIPS}
           maxSelect={3}
-        />
-        <TextInput
-          name="date"
-          type="date"
-          label="Date Input"
-          placeholder="Your Brand Name"
         />
         <CheckboxInput name="tac" label="I agree to the terms and conditions" />
       </Form>
