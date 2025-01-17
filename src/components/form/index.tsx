@@ -3,8 +3,8 @@ import { FormProps } from "./types";
 import Typography from "../typography";
 import Button from "../button";
 
-const Form = ({ title, onSubmit, children }: FormProps) => {
-  const { handleSubmit } = useFormContext();
+const Form = ({ title, onSubmit, children, onRest }: FormProps) => {
+  const { handleSubmit, reset } = useFormContext();
 
   return (
     <form
@@ -15,10 +15,24 @@ const Form = ({ title, onSubmit, children }: FormProps) => {
         {title}
       </Typography>
       {children}
-
-      <Button className="text-black" type="submit">
-        Submit
-      </Button>
+      <div className="w-full flex flex-col sm:flex-row gap-2 max-w-[700px]">
+        <Button className="text-black w-full" type="submit">
+          Submit
+        </Button>
+        <Button
+          className="text-black w-full"
+          type="submit"
+          theme="secondary"
+          onClick={() => {
+            if (onRest) {
+              onRest();
+            }
+            reset();
+          }}
+        >
+          clear Form
+        </Button>
+      </div>
     </form>
   );
 };

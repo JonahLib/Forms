@@ -5,6 +5,7 @@ export const FORM_SCHEMA = yup.object().shape({
   chips: yup.array().min(1),
   tac: yup.boolean(),
   date: yup.date().required(),
+  radio: yup.string().required(),
 });
 
 export const TEST_CHIPS = [
