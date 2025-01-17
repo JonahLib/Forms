@@ -30,7 +30,7 @@ const CheckboxInput = ({ name, label, onSelect }: CheckboxInputProps) => {
 
   const renderLabel = (): ReactElement => {
     return (
-      <Typography variant="body" fontWeight="medium">
+      <Typography variant="body" fontWeight="bold">
         {label}
       </Typography>
     );

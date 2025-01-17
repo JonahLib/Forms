@@ -24,7 +24,7 @@ const TextInput = ({
   const renderLabel = (): NullableReactElement => {
     if (!label) return null;
     return (
-      <label htmlFor={name} className="text-gray-500">
+      <label htmlFor={name} className="text-black font-bold">
         {label}
       </label>
     );

@@ -28,7 +28,9 @@ const DropdownInput = ({ name, label, options }: DropdownInputProps) => {
   const renderLabel = () => {
     return (
       <label>
-        <Typography>{label}</Typography>
+        <Typography colour="text-black" fontWeight="bold">
+          {label}
+        </Typography>
       </label>
     );
   };

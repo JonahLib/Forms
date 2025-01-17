@@ -5,10 +5,15 @@ import ChipsInput from "@/components/chips_input";
 import DropdownInput from "@/components/dropdown_input";
 import Form from "@/components/form";
 import FormProvider from "@/components/form_provider";
+import FormResults from "@/components/form_results";
+import RadioInput from "@/components/radio_input/indes";
 import TextInput from "@/components/text_input";
 import { FORM_SCHEMA, TEST_CHIPS } from "@/constants/form";
+import { useState } from "react";
 
 export default function Home() {
+  const [data, setData] = useState(null);
+
   return (
     <FormProvider
       defaultValues={{
@@ -16,17 +21,31 @@ export default function Home() {
         chips: [],
         text: "",
         dropdown: "",
-        ccgs: "",
         date: "",
+        radio: "",
       }}
       yupSchema={FORM_SCHEMA}
     >
-      <Form title="Form" onSubmit={(data) => console.log(data)}>
+      <Form
+        title="Form"
+        onSubmit={(data) => setData(data)}
+        onRest={() => setData(null)}
+      >
         <TextInput
           name="text"
           type="text"
           label="Text Input"
           placeholder="Place holder"
+        />
+        <RadioInput
+          name="radio"
+          title="Radio Input"
+          options={[
+            { label: "Option 1", value: "1" },
+            { label: "Option 2", value: "2" },
+            { label: "Option 3", value: "3" },
+          ]}
+          className="mb-4"
         />
         <DropdownInput
           name="dropdown"
@@ -52,6 +71,7 @@ export default function Home() {
         />
         <CheckboxInput name="tac" label="I agree to the terms and conditions" />
       </Form>
+      <FormResults data={data} />
     </FormProvider>
   );
 }
