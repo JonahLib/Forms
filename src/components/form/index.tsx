@@ -9,7 +9,7 @@ const Form = ({ title, onSubmit, children, onRest }: FormProps) => {
   return (
     <form
       onSubmit={handleSubmit((data) => onSubmit(data))}
-      className="w-full flex flex-col justify-center gap-6 mx-auto my-4 p-2 max-w-[700px]"
+      className="w-full flex flex-col justify-center gap-6 mx-auto my-4 py-2 px-4 max-w-[700px]"
     >
       <Typography className="self-center" variant="header" fontWeight="bold">
         {title}
